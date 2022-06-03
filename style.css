@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid #007A04;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #e0f6ff);
+}
+
+/*Configura a imagem do cano e adiciona a animação de duração de
+2 segundos e colocando essa animação com um loop infinito*/
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;   
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+/*Configura a imagem do Mario e adiciona a animação*/
+.mario {
+   width: 220px; 
+   position: absolute;
+   bottom: 0px;
+   
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 370px;
+    animation: clouds-animation 10s infinite linear;
+}
+
+/*Cria a animação, começando da direita com valor 0 e indo
+até 100% da minha tela.*/
+@keyframes pipe-animation {
+    from {
+        right: 0;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+/*Cria a animação do Mario*/
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+/*Cria a animação das nuvens*/
+@keyframes clouds-animation {
+    from {
+        right: -370px;
+    }
+    to {
+        right: 100%;
+    }
+}
